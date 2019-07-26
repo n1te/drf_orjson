@@ -1,0 +1,12 @@
+dist: xenial
+language: python
+python:
+- '3.5'
+install:
+- pip install tox
+script: tox
+deploy:
+  provider: pypi
+  user: n1te
+  password:
+    secure: MAT43cI3J1CHaf752QBJvGX0lk67FwRPrZP5ampGdB2Z2O55T5vzRXOarw5l3g8xKHNTdu3FdM8Ovm9mlV6F29M+Viv2ptPIq/qDW5cz0vtQ4IRniHS6t6jaOqecKBmrGZNrAzTBGsoz2PAdKVurXyjUOs5az7DHnQrckLRSBVrxbOfvul6ucyJ+rxzGuQF+7o/viJftGeZ/lK8NBq89WNvoTBs+PPUPL/sSfqPgA+Ed2MjaivAEnIcWSdkzlk6EIzccFiMCsvvmcf76LBK6q8Q1mhukamiMLv3airN63liVTiJ56D3n35I2XqKODSWhGZzzhvR2rKJDUyXnknLFajKHbw5qsExB34lEzks8ms9voxUP7UpBpqVmnHezfWSf7VHjuDOim/ZmD5oithiEF+jKPK6EAXpatrFaLS759tVZgNW5G3vHLyig3GSnkq0UgoowNichB+zblFAzyqovxhwFIBBsEetRGgqY6vjYQ9DOt/Ci5htEPI94Rh4yi5i8UsN7zEfLgepG+qHL4eNOXvLOSnm8Br6bU6U6mWvTFAZe4MKgyJTIrZr3wM/gsj5Ek6zH9ysqSU+yJsu97aEJgoxwiWFoSTniUz1RVGJjFIH8W1H9aPVoj/Jc6tW7Fq78sMqUj9ssZWMIxD+npYBE4HQ9yx5Yi2+l6HPnkZnEgy0=
