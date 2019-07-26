@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='drf_orjson',
-    version='0.2',
+    version='0.2.1',
     description='DRF ORJSON Renderer',
     license='MIT',
     author='Stanislav Shershnev',
