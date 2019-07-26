@@ -1,3 +1,4 @@
+import uuid
 from decimal import Decimal
 
 import orjson
@@ -7,6 +8,20 @@ from rest_framework.renderers import JSONRenderer
 def default_serializer(obj):
     if isinstance(obj, Decimal):
         return float(obj)
+    if isinstance(obj, str):
+        return str(obj)
+    elif hasattr(obj, '__iter__'):
+        return tuple(item for item in obj)
+    elif isinstance(obj, uuid.UUID):
+        return str(obj)
+    elif hasattr(obj, 'tolist'):
+        return obj.tolist()
+    elif hasattr(obj, '__getitem__'):
+        cls = list if isinstance(obj, (list, tuple)) else dict
+        try:
+            return cls(obj)
+        except:
+            pass
     raise TypeError
 
 
