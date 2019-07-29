@@ -7,6 +7,10 @@ from drf_orjson.parsers import ORJSONParser
 from drf_orjson.renderers import ORJSONRenderer
 
 
+class DictType(dict):
+    pass
+
+
 @pytest.fixture
 def data():
     return {
@@ -18,6 +22,7 @@ def data():
         'decimal': Decimal('95.2'),
         'iter': range(3),
         'uuid': uuid.uuid4(),
+        'dict_type': DictType({'a': 1, 'b': 2})
     }
 
 
@@ -28,6 +33,7 @@ def json_data(data):
         'decimal': 95.2,
         'iter': [0, 1, 2],
         'uuid': str(data['uuid']),
+        'dict_type': {'a': 1, 'b': 2},
     })
     return jdata
 

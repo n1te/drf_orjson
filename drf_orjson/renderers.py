@@ -10,8 +10,10 @@ def default_serializer(obj):
         return float(obj)
     if isinstance(obj, str):
         return str(obj)
+    if isinstance(obj, dict):
+        return dict(obj)
     elif hasattr(obj, '__iter__'):
-        return tuple(item for item in obj)
+        return list(item for item in obj)
     elif isinstance(obj, uuid.UUID):
         return str(obj)
     elif hasattr(obj, 'tolist'):
